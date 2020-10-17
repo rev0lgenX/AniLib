@@ -104,6 +104,21 @@
 
         </com.pranavpandey.android.dynamic.support.widget.DynamicCardView>
 
+
+        <com.pranavpandey.android.dynamic.support.widget.DynamicCardView style="@style/Widget.DynamicApp.Card">
+
+            <com.pranavpandey.android.dynamic.support.setting.DynamicCheckPreference
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ads_checked="true"
+                app:ads_description="@string/show_adult_content_desc"
+                app:ads_icon="@drawable/ic_dropped"
+                app:ads_key="can_show_adult_key"
+                app:ads_title="@string/show_adult_content" />
+
+        </com.pranavpandey.android.dynamic.support.widget.DynamicCardView>
+
+
         <com.pranavpandey.android.dynamic.support.widget.DynamicCardView style="@style/Widget.DynamicApp.Card">
 
             <com.pranavpandey.android.dynamic.support.view.DynamicItemView

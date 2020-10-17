@@ -16,6 +16,7 @@ private const val tokenKey = "token_key"
 private const val titleKey = "title_key"
 private const val imageQualityKey = "image_quality_key"
 private const val userIdKey = "user_id_key"
+private const val canShowAdultKey = "can_show_adult_key"
 private const val lastNotificationKey = "last_notification_key"
 private const val sharedPrefSyncKey = "sharedPrefSyncKey"
 
@@ -101,7 +102,7 @@ fun setNewNotification(context: Context, notifId: Int = -1) {
 
 
 fun canShowAdult(context: Context): Boolean {
-    return false
+    return context.getBoolean(canShowAdultKey, true)
 }
 
 fun isSharedPreferenceSynced(context: Context, synced: Boolean? = null) =

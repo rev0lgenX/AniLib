@@ -106,9 +106,11 @@ class MediaSearchField : SearchField() {
                     country(CountryOfOrigins.values()[it].name)
                 }
 
-                isAdult(canShowAdult)
+                if(!canShowAdult){
+                    isAdult(canShowAdult)
+                }
 
-                if(hentaiOnly){
+                if(hentaiOnly && canShowAdult){
                     isAdult(hentaiOnly)
                 }
 
