@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="release_info">
+    <string name="release_info" translatable="false">
         ## Whats new!!!. \n
+
+        ### -v1.1.6-base \n
+        * Code is OpenSource [Github](https://github.com/rev0lgenX/AniLib). Visit to contribute or file an issue. \n
+        * Join Discord to directly communicate about features, bugs and issues. [Discord](https://discord.com/invite/Gd2TVQT) \n
+        * Choose startup page from setting. \n
+        * Added check for update. Will notify if there is new update. \n
+        * UI changes. \n
 
 
         ### -v1.1.5-base \n
@@ -58,8 +65,8 @@
 
     </string>
 
-    <string name="studio_note">
-        ### More feature available in AniLib Plus Ultra Version. Visit [AniLib](https://anilib.onrender.com/#/) for more info.
+    <string name="studio_note" translatable="false">
+        ### Visit [AniLib](https://anilib.onrender.com/#/) for more info.
     </string>
 
 

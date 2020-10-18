@@ -64,4 +64,9 @@
         <item name="android:textSize">@dimen/bottom_navigation_text_size</item>
     </style>
 
+
+    <style name="NavigationTextAppearance">
+        <item name="fontFamily">@font/berlinrounded_extra_bold</item>
+        <item name="android:fontFamily">@font/berlinrounded_extra_bold</item>
+    </style>
 </resources>

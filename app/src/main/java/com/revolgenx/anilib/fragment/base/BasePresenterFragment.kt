@@ -90,9 +90,6 @@ abstract class BasePresenterFragment<M : Any>() : BaseLayoutFragment() {
         super.onActivityCreated(savedInstanceState)
         reloadLayoutManager()
 
-        if (savedInstanceState == null)
-            createSource()
-
         baseSwipeRefreshLayout.setOnRefreshListener {
             createSource()
             baseSwipeRefreshLayout.isRefreshing = false

@@ -13,8 +13,8 @@ import com.pranavpandey.android.dynamic.support.widget.DynamicImageView
 import com.pranavpandey.android.dynamic.utils.DynamicUnitUtils
 import com.revolgenx.anilib.R
 import com.revolgenx.anilib.controller.ThemeController
+import com.revolgenx.anilib.ui.view.makeToast
 import com.revolgenx.anilib.util.dp
-import com.revolgenx.anilib.util.makeToast
 
 //todo add min max filter
 class PlusMinusEditTextLayout(context: Context, attributeSet: AttributeSet?, set: Int = 0) :

@@ -17,8 +17,7 @@ import com.revolgenx.anilib.model.studio.StudioModel
 import com.revolgenx.anilib.preference.loggedIn
 import com.revolgenx.anilib.presenter.StudioMediaPresenter
 import com.revolgenx.anilib.repository.util.Status.*
-import com.revolgenx.anilib.util.makeSnakeBar
-import com.revolgenx.anilib.util.makeToast
+import com.revolgenx.anilib.ui.view.makeToast
 import com.revolgenx.anilib.util.naText
 import com.revolgenx.anilib.util.openLink
 import com.revolgenx.anilib.viewmodel.StudioViewModel
@@ -191,7 +190,7 @@ class StudioFragment : BasePresenterFragment<StudioMediaModel>() {
             if (requireContext().loggedIn()) {
                 viewModel.toggleStudioFav(toggleFavouriteField)
             } else {
-                studioCoordinatorLayout.makeSnakeBar(R.string.please_log_in)
+                makeToast(R.string.please_log_in, null, R.drawable.ic_person)
             }
         }
     }

@@ -52,7 +52,7 @@ open class DiscoverPopularFragment : DiscoverTrendingFragment() {
 
         orderedViewList.add(OrderedViewModel(
             popularRecyclerView, order,
-            " >>> " + getString(R.string.popular) + " <<<", showSetting = true
+            getString(R.string.popular) + " >>>", showSetting = true
         ) {
             handleClick(it)
         })

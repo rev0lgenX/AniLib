@@ -216,7 +216,7 @@
     <string name="whats_new">What\'s new</string>
     <string name="support">Support</string>
     <string name="contribute">Contribute</string>
-    <string name="plus_ultra_version">Plus Ultra Version</string>
+    <string name="studio_version">Studio Version</string>
     <string name="terms_and_condition">Terms and Condition</string>
     <string name="terms_and_condition_desc">View Terms and Condition</string>
     <string name="in_progress">Working on it.</string>
@@ -420,6 +420,9 @@
     <string name="checking_for_update_failed">Chekcing for update failed</string>
     <string name="discord">Discord</string>
     <string name="github_desc">View source on Github.</string>
+    <string name="start_nav_page_desc">Configure startup page.</string>
+    <string name="startup_page">Startup Page</string>
+    <string name="update_">update</string>
 
 
 </resources>

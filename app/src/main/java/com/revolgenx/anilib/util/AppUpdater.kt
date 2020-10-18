@@ -15,6 +15,7 @@ import com.revolgenx.anilib.dialog.LoadingDialog
 import com.revolgenx.anilib.dialog.MessageDialog
 import com.revolgenx.anilib.preference.getUpdateVersion
 import com.revolgenx.anilib.preference.setUpdateVersion
+import com.revolgenx.anilib.ui.view.makeToast
 import timber.log.Timber
 
 object AppUpdater {
@@ -39,12 +40,12 @@ object AppUpdater {
                     loadingDialog?.dismiss()
                     if (update != null) {
                         Timber.d(update.latestVersion)
-                        if (!update.latestVersion.contains(getUpdateVersion(context)) || (isUpdateAvailable == true && manualCheck)) {
+                        if (update.latestVersion > getUpdateVersion(context) || (isUpdateAvailable == true && manualCheck)) {
                             setUpdateVersion(update.latestVersion)
                             with(MessageDialog.Companion.Builder()) {
                                 titleRes = R.string.new_update_available
                                 messageRes = R.string.new_update_description
-                                positiveTextRes = R.string.check_for_update
+                                positiveTextRes = R.string.update_
                                 negativeTextRes = R.string.no_thanks
                                 build().let {
                                     it.onButtonClickedListener = { _, which ->

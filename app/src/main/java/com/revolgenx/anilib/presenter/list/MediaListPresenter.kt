@@ -26,6 +26,7 @@ import com.revolgenx.anilib.preference.userName
 import com.revolgenx.anilib.repository.util.Status
 import com.revolgenx.anilib.type.MediaType
 import com.revolgenx.anilib.type.ScoreFormat
+import com.revolgenx.anilib.ui.view.makeToast
 import com.revolgenx.anilib.util.*
 import com.revolgenx.anilib.viewmodel.media_list.MediaListViewModel
 import kotlinx.android.synthetic.main.media_list_presenter.view.*
@@ -193,7 +194,7 @@ class MediaListPresenter(
                         ), mediaListCoverImageView
                     ).postEvent
                 } else {
-                    (parent as View).makeSnakeBar(R.string.please_log_in)
+                    context.makeToast(R.string.please_log_in, null, R.drawable.ic_person)
                 }
                 true
             }

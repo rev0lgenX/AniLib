@@ -27,12 +27,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:ads_colorType="tint_surface"
-                app:ads_icon="@drawable/ads_ic_style"
+                app:ads_icon="@drawable/ic_style"
                 app:ads_subtitle="@string/dynamically_apply_theme"
                 app:ads_title="@string/ads_dynamic_theme" />
 
         </com.pranavpandey.android.dynamic.support.widget.DynamicCardView>
 
+        <com.pranavpandey.android.dynamic.support.widget.DynamicCardView
+            style="@style/Widget.DynamicApp.Card">
+
+            <com.pranavpandey.android.dynamic.support.setting.DynamicSpinnerPreference
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:ads_description="@string/start_nav_page_desc"
+                app:ads_entries="@array/application_startup_page_entries"
+                app:ads_icon="@drawable/ic_navigation"
+                app:ads_key="@string/start_navigation_key"
+                app:ads_title="@string/startup_page"
+                app:ads_value="0"
+                app:ads_values="@array/application_startup_values" />
+
+        </com.pranavpandey.android.dynamic.support.widget.DynamicCardView>
 
         <com.pranavpandey.android.dynamic.support.widget.DynamicCardView
             style="@style/Widget.DynamicApp.Card"
@@ -43,7 +58,7 @@
                 android:layout_height="wrap_content"
                 app:ads_description="@string/preferred_media_title"
                 app:ads_entries="@array/application_language_entries"
-                app:ads_icon="@drawable/ads_ic_language"
+                app:ads_icon="@drawable/ic_language"
                 app:ads_key="@string/application_language_key"
                 app:ads_title="@string/application_language"
                 app:ads_value="0"

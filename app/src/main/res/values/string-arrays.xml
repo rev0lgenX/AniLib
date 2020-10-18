@@ -262,6 +262,18 @@
         <item>it</item>
     </string-array>
 
+    <!--application startup page-->
+    <string-array name="application_startup_page_entries">
+        <item>Discover</item>
+        <item>Anime List</item>
+        <item>Manga List</item>
+    </string-array>
+
+    <string-array name="application_startup_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
 
 
     <!--image-->

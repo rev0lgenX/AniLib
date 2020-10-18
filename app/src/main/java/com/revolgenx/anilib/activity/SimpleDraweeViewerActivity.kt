@@ -17,7 +17,7 @@ import com.revolgenx.anilib.R
 import com.revolgenx.anilib.controller.ThemeController
 import com.revolgenx.anilib.meta.DraweeViewerMeta
 import com.revolgenx.anilib.preference.getApplicationLocale
-import com.revolgenx.anilib.util.makeToast
+import com.revolgenx.anilib.ui.view.makeToast
 import com.revolgenx.anilib.util.openLink
 import com.thefuntasty.hauler.setOnDragDismissedListener
 import kotlinx.android.synthetic.main.simple_drawee_viewer_activity.*
@@ -67,7 +67,6 @@ class SimpleDraweeViewerActivity : DynamicSystemActivity() {
         bigImageViewer.setProgressIndicator(ProgressPieIndicator())
         bigImageViewer.setImageSaveCallback(object : ImageSaveCallback {
             override fun onFail(p0: Throwable?) {
-                Timber.e(p0)
                 makeToast(R.string.failed_to_save, icon = R.drawable.ic_error)
             }
 

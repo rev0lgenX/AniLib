@@ -1,16 +1,17 @@
 package com.revolgenx.anilib.fragment.airing
 
 import android.annotation.SuppressLint
-import android.app.DatePickerDialog
 import android.os.Bundle
 import android.view.*
 import androidx.appcompat.view.menu.MenuBuilder
 import com.otaliastudios.elements.Presenter
 import com.otaliastudios.elements.Source
+import com.pranavpandey.android.dynamic.support.theme.DynamicTheme
 import com.revolgenx.anilib.R
 import com.revolgenx.anilib.activity.ContainerActivity
 import com.revolgenx.anilib.event.ListEditorResultEvent
 import com.revolgenx.anilib.fragment.base.BasePresenterFragment
+import com.revolgenx.anilib.model.DateModel
 import com.revolgenx.anilib.model.airing.AiringMediaModel
 import com.revolgenx.anilib.presenter.airing.AiringPresenter
 import com.revolgenx.anilib.viewmodel.airing.AiringViewModel
@@ -90,8 +91,8 @@ class AiringFragment : BasePresenterFragment<AiringMediaModel>() {
                 true
             }
             R.id.airing_custom -> {
-                DatePickerDialog(
-                    requireContext(), { view, year, month, dayOfMonth ->
+                val datePickerDialog = com.wdullaer.materialdatetimepicker.date.DatePickerDialog.newInstance(
+                    { _, year, month, dayOfMonth ->
                         viewModel.updateDate(
                             ZonedDateTime.of(
                                 year,
@@ -104,15 +105,15 @@ class AiringFragment : BasePresenterFragment<AiringMediaModel>() {
                                 ZoneOffset.UTC
                             )
                         )
-
-                        updateToolbarTitle()
-                        createSource()
-                        invalidateAdapter()
                     },
                     viewModel.startDateTime.year,
                     viewModel.startDateTime.month.ordinal,
                     viewModel.startDateTime.dayOfMonth
-                ).show()
+                )
+
+                datePickerDialog.accentColor = DynamicTheme.getInstance().get().accentColor
+                datePickerDialog.show(childFragmentManager, "AiringFragmentDatePickerTag")
+
                 true
             }
             else -> super.onOptionsItemSelected(item)

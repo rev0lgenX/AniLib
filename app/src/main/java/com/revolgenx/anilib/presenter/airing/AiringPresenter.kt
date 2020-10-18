@@ -19,7 +19,7 @@ import com.revolgenx.anilib.model.airing.AiringMediaModel
 import com.revolgenx.anilib.model.search.filter.MediaSearchFilterModel
 import com.revolgenx.anilib.preference.loggedIn
 import com.revolgenx.anilib.type.MediaType
-import com.revolgenx.anilib.util.makeSnakeBar
+import com.revolgenx.anilib.ui.view.makeToast
 import com.revolgenx.anilib.util.naText
 import com.revolgenx.anilib.util.string
 import kotlinx.android.synthetic.main.airing_presenter_layout.view.*
@@ -110,7 +110,7 @@ class AiringPresenter(context: Context) : Presenter<AiringMediaModel>(context) {
                         ), holder.itemView.coverImageIv
                     ).postEvent
                 } else {
-                    (parent as View).makeSnakeBar(R.string.please_log_in)
+                    context.makeToast(R.string.please_log_in, null, R.drawable.ic_person)
                 }
             }
 

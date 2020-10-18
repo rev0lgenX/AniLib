@@ -64,7 +64,9 @@ abstract class MediaListCollectionViewModel(
                 }.toMutableList()
 
                 launch(Dispatchers.Main) {
-                    source?.filterPage(filteredList!!)
+                    filteredList?.let {
+                        source?.filterPage(it)
+                    }
                 }
             }
         }

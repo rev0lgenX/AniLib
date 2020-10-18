@@ -5,6 +5,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.apollographql.apollo'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: "androidx.navigation.safeargs.kotlin"
 
 
 def anilistPropertiesFile = rootProject.file("anilist.properties");
@@ -21,7 +22,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 22
-        versionName "1.1.5-base"
+        versionName "1.1.6-base"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
 
@@ -126,6 +127,7 @@ ext {
     draglist_version = '1.7.2'
     mpandroid_version = 'v3.1.0'
     smarttab_version = '2.0.0@aar'
+    navcomp_version = '2.3.0'
 
     preetytime_version = '4.0.4.Final'
 
@@ -279,6 +281,9 @@ dependencies {
     //update checker
     implementation "com.github.javiersantos:AppUpdater:$appupdater_version"
 
+    //navigation component
+    implementation "androidx.navigation:navigation-fragment-ktx:$navcomp_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$navcomp_version"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

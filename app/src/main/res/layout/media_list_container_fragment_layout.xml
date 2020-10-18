@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.pranavpandey.android.dynamic.support.widget.DynamicRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/listRootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.pranavpandey.android.dynamic.support.widget.DynamicCoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/dynamicSmartTab"
+        android:layout_alignParentTop="true">
+
+        <include layout="@layout/toolbar_layout"/>
+
+
+        <com.pranavpandey.android.dynamic.support.widget.DynamicFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <com.pranavpandey.android.dynamic.support.widget.DynamicViewPager
+                android:id="@+id/mediaListViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.pranavpandey.android.dynamic.support.widget.DynamicFrameLayout>
+
+    </com.pranavpandey.android.dynamic.support.widget.DynamicCoordinatorLayout>
+
+    <include
+        layout="@layout/custom_bottom_navigation_view"/>
+
+</com.pranavpandey.android.dynamic.support.widget.DynamicRelativeLayout>
+

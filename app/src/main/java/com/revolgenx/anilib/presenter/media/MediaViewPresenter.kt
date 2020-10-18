@@ -14,7 +14,7 @@ import com.revolgenx.anilib.meta.ListEditorMeta
 import com.revolgenx.anilib.meta.MediaBrowserMeta
 import com.revolgenx.anilib.model.CommonMediaModel
 import com.revolgenx.anilib.preference.loggedIn
-import com.revolgenx.anilib.util.makeSnakeBar
+import com.revolgenx.anilib.ui.view.makeToast
 import kotlinx.android.synthetic.main.media_view_present_layout.view.*
 
 class MediaViewPresenter(requireContext: Context):Presenter<CommonMediaModel>(requireContext) {
@@ -57,7 +57,7 @@ class MediaViewPresenter(requireContext: Context):Presenter<CommonMediaModel>(re
                         ), mediaCoverImageIv
                     ).postEvent
                 } else {
-                    (parent as View).makeSnakeBar(R.string.please_log_in)
+                    context.makeToast(R.string.please_log_in, null, R.drawable.ic_person)
                 }
                 true
             }

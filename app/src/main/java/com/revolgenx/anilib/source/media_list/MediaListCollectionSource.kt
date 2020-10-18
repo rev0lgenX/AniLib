@@ -24,7 +24,8 @@ class MediaListCollectionSource(
     }
 
     fun filterPage(filterList: MutableList<MediaListModel>) {
-        postResult(firstPage, filterList)
+        if (::firstPage.isInitialized)
+            postResult(firstPage, filterList)
     }
 
     override fun onPageOpened(page: Page, dependencies: List<Element<*>>) {

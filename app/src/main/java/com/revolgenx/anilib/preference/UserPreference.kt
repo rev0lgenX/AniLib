@@ -3,8 +3,6 @@ package com.revolgenx.anilib.preference
 import android.content.Context
 import com.auth0.android.jwt.JWT
 import com.google.gson.Gson
-import com.pranavpandey.android.dynamic.preferences.DynamicPreferences
-import com.pranavpandey.android.dynamic.utils.DynamicPackageUtils
 import com.revolgenx.anilib.R
 import com.revolgenx.anilib.model.UserPrefModel
 import com.revolgenx.anilib.model.list.MediaListOptionModel
@@ -63,26 +61,27 @@ fun getUserPrefModel(context: Context): UserPrefModel {
 }
 
 
-fun Context.removeBasicUserDetail() {
+fun removeBasicUserDetail(context: Context) {
     userPrefModelPref = UserPrefModel().also {
-        it.userName = getString(R.string.app_name)
+        it.userName = context.getString(R.string.app_name)
         it.mediaListOption = MediaListOptionModel().also { option ->
             option.scoreFormat = ScoreFormat.`$UNKNOWN`.ordinal
         }
     }
-    this.putString(userModelKey, Gson().toJson(userPrefModelPref))
+    context.putString(userModelKey, Gson().toJson(userPrefModelPref))
 }
 
 fun Context.logOut() {
     loggedIn(false)
     token("")
     userId(-1)
-    removeNotification()
-    removeBasicUserDetail()
+    removeNotification(this)
+    removeBasicUserDetail(this)
+    resetNavigationItemPosition(this)
 }
 
-fun Context.removeNotification() {
-    setNewNotification(this)
+fun removeNotification(context: Context) {
+    setNewNotification(context)
 }
 
 fun Context.logIn(accessToken: String) {
@@ -113,3 +112,10 @@ fun isSharedPreferenceSynced(context: Context, synced: Boolean? = null) =
         synced
     }
 
+fun resetNavigationItemPosition(context: Context){
+    val startNavigation = getStartNavigation(context)
+    //check if other navigation is added for now check only discover
+    if(startNavigation != DISCOVER_NAV_POS){
+        setStartNavigation(context, DISCOVER_NAV_POS)
+    }
+}

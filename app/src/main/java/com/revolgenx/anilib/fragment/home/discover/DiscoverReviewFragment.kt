@@ -39,7 +39,7 @@ open class DiscoverReviewFragment : DiscoverNewFragment() {
 
         addView(
             discoverNewRecyclerView,
-            " >>> " + getString(R.string.recent_reviews) + " <<<", showSetting = false
+            getString(R.string.recent_reviews) + " >>>", showSetting = false
         ) {
             handleClick(it)
         }

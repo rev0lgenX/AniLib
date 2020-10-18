@@ -47,7 +47,7 @@ open class DiscoverAiringFragment : BaseDiscoverFragment() {
         }
         orderedViewList.add(OrderedViewModel(
             discoverAiringRecyclerView!!, order,
-            " >>> " + getString(R.string.airing_schedules) + " <<<"
+            getString(R.string.airing_schedules) + " >>>"
             , showSetting = false
         ) {
             this@DiscoverAiringFragment.handleClick(it)

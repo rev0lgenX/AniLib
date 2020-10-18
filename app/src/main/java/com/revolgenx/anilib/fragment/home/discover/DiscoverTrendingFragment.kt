@@ -52,7 +52,7 @@ open class DiscoverTrendingFragment : DiscoverReadingFragment() {
 
         orderedViewList.add(OrderedViewModel(
             trendingRecyclerView!!, order,
-            " >>> " + getString(R.string.trending) + " <<<"
+            getString(R.string.trending) + " >>>"
             , showSetting = true
         ) {
             handleClick(it)

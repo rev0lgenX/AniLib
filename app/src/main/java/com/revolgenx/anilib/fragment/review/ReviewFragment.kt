@@ -18,8 +18,7 @@ import com.revolgenx.anilib.preference.loggedIn
 import com.revolgenx.anilib.repository.util.Resource
 import com.revolgenx.anilib.repository.util.Status
 import com.revolgenx.anilib.type.ReviewRating
-import com.revolgenx.anilib.util.makeLogInSnackBar
-import com.revolgenx.anilib.util.makeToast
+import com.revolgenx.anilib.ui.view.makeToast
 import com.revolgenx.anilib.viewmodel.review.ReviewViewModel
 import kotlinx.android.synthetic.main.error_layout.*
 import kotlinx.android.synthetic.main.loading_layout.*
@@ -128,7 +127,7 @@ class ReviewFragment : BaseToolbarFragment() {
                     checkReviewRatingCondition(it)
                 }
             } else {
-                makeLogInSnackBar(reviewFragmentRootLayout)
+                makeToast(R.string.please_log_in, null, R.drawable.ic_person)
             }
         }
 
@@ -148,7 +147,7 @@ class ReviewFragment : BaseToolbarFragment() {
                     checkReviewRatingCondition(it)
                 }
             } else {
-                makeLogInSnackBar(reviewFragmentRootLayout)
+                makeToast(R.string.please_log_in, null, R.drawable.ic_person)
             }
         }
     }

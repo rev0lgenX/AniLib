@@ -25,8 +25,7 @@ import com.revolgenx.anilib.preference.loggedIn
 import com.revolgenx.anilib.repository.util.Resource
 import com.revolgenx.anilib.repository.util.Status
 import com.revolgenx.anilib.type.RecommendationRating
-import com.revolgenx.anilib.util.makeSnakeBar
-import com.revolgenx.anilib.util.makeToast
+import com.revolgenx.anilib.ui.view.makeToast
 import com.revolgenx.anilib.util.naText
 import com.revolgenx.anilib.viewmodel.home.RecommendationViewModel
 import kotlinx.android.synthetic.main.recommendation_presenter_layout.view.*
@@ -112,7 +111,7 @@ class RecommendationPresenter(
                             ), recommendedFromImageView
                         ).postEvent
                     } else {
-                        (parent as View).makeSnakeBar(R.string.please_log_in)
+                        context.makeToast(R.string.please_log_in, null, R.drawable.ic_person)
                     }
                     true
                 }
@@ -157,7 +156,7 @@ class RecommendationPresenter(
                             ), recommendedImageView
                         ).postEvent
                     } else {
-                        (parent as View).makeSnakeBar(R.string.please_log_in)
+                        context.makeToast(R.string.please_log_in, null, R.drawable.ic_person)
                     }
                     true
                 }
@@ -282,8 +281,10 @@ class RecommendationPresenter(
     }
 
     private fun View.checkLoggedIn(): Boolean {
-        val loggedIn = context.loggedIn()
-        if (!loggedIn) makeSnakeBar(R.string.please_log_in)
-        return loggedIn
+        return context.loggedIn().also {
+            if (!it) {
+                context.makeToast(R.string.please_log_in, null, R.drawable.ic_person)
+            }
+        }
     }
 }

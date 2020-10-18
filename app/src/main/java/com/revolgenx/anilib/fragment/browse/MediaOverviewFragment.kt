@@ -423,10 +423,11 @@ class MediaOverviewFragment : BaseFragment() {
                         }
 
                         override fun onClick(widget: View) {
-                            if (shown)
+                            if (shown){
                                 BrowseTagEvent(MediaSearchFilterModel().also {
                                     it.tags = listOf(tag.name!!.trim())
                                 }).postEvent
+                            }
                             else {
                                 spoilerSpans.forEach { it.shown = true }
                                 widget.invalidate()

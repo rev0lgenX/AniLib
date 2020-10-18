@@ -17,7 +17,7 @@ import com.revolgenx.anilib.meta.ListEditorMeta
 import com.revolgenx.anilib.meta.MediaBrowserMeta
 import com.revolgenx.anilib.model.StaffMediaCharacterModel
 import com.revolgenx.anilib.preference.loggedIn
-import com.revolgenx.anilib.util.makeSnakeBar
+import com.revolgenx.anilib.ui.view.makeToast
 import com.revolgenx.anilib.util.naText
 import kotlinx.android.synthetic.main.staff_media_character_presenter.view.*
 
@@ -97,7 +97,7 @@ class StaffMediaCharacterPresenter(context: Context) :
                         ), staffMediaImageView
                     ).postEvent
                 } else {
-                    (parent as View).makeSnakeBar(R.string.please_log_in)
+                    context.makeToast(R.string.please_log_in, null, R.drawable.ic_person)
                 }
                 true
             }

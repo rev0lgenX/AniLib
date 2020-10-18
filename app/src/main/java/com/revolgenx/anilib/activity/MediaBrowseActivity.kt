@@ -43,6 +43,7 @@ import com.revolgenx.anilib.preference.loggedIn
 import com.revolgenx.anilib.repository.util.Resource
 import com.revolgenx.anilib.repository.util.Status.*
 import com.revolgenx.anilib.type.MediaType
+import com.revolgenx.anilib.ui.view.makeToast
 import com.revolgenx.anilib.util.*
 import com.revolgenx.anilib.viewmodel.media.MediaBrowserViewModel
 import kotlinx.android.synthetic.main.activity_media_browser.*
@@ -408,7 +409,7 @@ class MediaBrowseActivity : BaseDynamicActivity() {
                 ), options
             )
         } else {
-            browserRootLayout.makeSnakeBar(R.string.please_log_in)
+            makeToast(R.string.please_log_in, null, R.drawable.ic_person)
         }
     }
 
@@ -416,7 +417,7 @@ class MediaBrowseActivity : BaseDynamicActivity() {
         if (toggling || !::mediaBrowserMeta.isInitialized) return
 
         if (!loggedIn()) {
-            browserRootLayout.makeSnakeBar(R.string.please_log_in)
+            makeToast(R.string.please_log_in, null, R.drawable.ic_person)
             return
         }
 
@@ -447,7 +448,7 @@ class MediaBrowseActivity : BaseDynamicActivity() {
                 )
             )
         } else {
-            makeLogInSnackBar(browserRootLayout)
+            makeToast(R.string.please_log_in, null, R.drawable.ic_person)
         }
     }
 
@@ -455,10 +456,18 @@ class MediaBrowseActivity : BaseDynamicActivity() {
 
 
     private fun setToolbarTheme() {
-        mediaBrowserCollapsingToolbar.setStatusBarScrimColor(DynamicTheme.getInstance().get().primaryColorDark)
-        mediaBrowserCollapsingToolbar.setContentScrimColor(DynamicTheme.getInstance().get().primaryColor)
-        mediaBrowserCollapsingToolbar.setCollapsedTitleTextColor(DynamicTheme.getInstance().get().tintPrimaryColor)
-        mediaBrowserCollapsingToolbar.setBackgroundColor(DynamicTheme.getInstance().get().backgroundColor)
+        mediaBrowserCollapsingToolbar.setStatusBarScrimColor(
+            DynamicTheme.getInstance().get().primaryColorDark
+        )
+        mediaBrowserCollapsingToolbar.setContentScrimColor(
+            DynamicTheme.getInstance().get().primaryColor
+        )
+        mediaBrowserCollapsingToolbar.setCollapsedTitleTextColor(
+            DynamicTheme.getInstance().get().tintPrimaryColor
+        )
+        mediaBrowserCollapsingToolbar.setBackgroundColor(
+            DynamicTheme.getInstance().get().backgroundColor
+        )
     }
 
 

@@ -32,7 +32,7 @@ import com.revolgenx.anilib.preference.loggedIn
 import com.revolgenx.anilib.preference.userId
 import com.revolgenx.anilib.repository.util.Status
 import com.revolgenx.anilib.type.MediaType
-import com.revolgenx.anilib.util.makeToast
+import com.revolgenx.anilib.ui.view.makeToast
 import com.revolgenx.anilib.util.openLink
 import com.revolgenx.anilib.util.prettyNumberFormat
 import com.revolgenx.anilib.viewmodel.user.UserProfileViewModel

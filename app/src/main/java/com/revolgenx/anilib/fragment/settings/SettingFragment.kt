@@ -1,6 +1,7 @@
 package com.revolgenx.anilib.fragment.settings
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -12,15 +13,18 @@ import com.revolgenx.anilib.dialog.ReleaseInfoDialog
 import com.revolgenx.anilib.fragment.base.BaseToolbarFragment
 import com.revolgenx.anilib.fragment.base.ParcelableFragment
 import com.revolgenx.anilib.fragment.notification.NotificationSettingFragment
+import com.revolgenx.anilib.preference.DISCOVER_NAV_POS
+import com.revolgenx.anilib.preference.getStartNavigation
+import com.revolgenx.anilib.preference.loggedIn
+import com.revolgenx.anilib.preference.setStartNavigation
+import com.revolgenx.anilib.ui.view.makeToast
 import kotlinx.android.synthetic.main.setting_fragment_layout.*
 
 class SettingFragment : BaseToolbarFragment() {
 
     override val title: Int = R.string.settings
 
-    override val contentRes: Int by lazy {
-        R.layout.setting_fragment_layout
-    }
+    override val contentRes: Int = R.layout.setting_fragment_layout
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -70,5 +74,20 @@ class SettingFragment : BaseToolbarFragment() {
         }
     }
 
+    override fun setSharedPreferenceChangeListener(): Boolean = true
 
+    override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
+        super.onSharedPreferenceChanged(sharedPreferences, key)
+        when (key) {
+            getString(R.string.start_navigation_key) -> {
+                if (!requireContext().loggedIn()) {
+                    val startNavigation = getStartNavigation(requireContext())
+                    if (startNavigation != DISCOVER_NAV_POS) {
+                        setStartNavigation(requireContext(), DISCOVER_NAV_POS)
+                        makeToast(R.string.please_log_in)
+                    }
+                }
+            }
+        }
+    }
 }

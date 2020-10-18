@@ -8,6 +8,7 @@
     <item name="customTextViewDescriptionId" type="id" />
     <item name="customTextViewTitleId" type="id" />
 
+    <item name="garlandStickView" type="id" />
     <item name="garlandTitleTv" type="id" />
     <item name="garlandSettingIv" type="id" />
     <item name="garlandConstraintLayout" type="id" />

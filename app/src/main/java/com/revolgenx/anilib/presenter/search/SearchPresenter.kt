@@ -16,7 +16,7 @@ import com.revolgenx.anilib.meta.*
 import com.revolgenx.anilib.model.BaseModel
 import com.revolgenx.anilib.model.search.*
 import com.revolgenx.anilib.preference.loggedIn
-import com.revolgenx.anilib.util.makeSnakeBar
+import com.revolgenx.anilib.ui.view.makeToast
 import com.revolgenx.anilib.util.naText
 import kotlinx.android.synthetic.main.search_character_layout.view.*
 import kotlinx.android.synthetic.main.search_media_layout.view.*
@@ -135,7 +135,7 @@ class SearchPresenter(context: Context, private val lifecycleOwner: LifecycleOwn
                     ), searchMediaImageView
                 ).postEvent
             } else {
-                (parent as View).makeSnakeBar(R.string.please_log_in)
+                context.makeToast(R.string.please_log_in, null, R.drawable.ic_person)
             }
             true
         }
@@ -148,7 +148,7 @@ class SearchPresenter(context: Context, private val lifecycleOwner: LifecycleOwn
         setOnClickListener {
             BrowseCharacterEvent(
                 CharacterMeta(
-                    item.characterId ?: -1,
+                    item.characterId,
                     item.characterImageModel?.image
                 ),
                 searchCharacterImageView

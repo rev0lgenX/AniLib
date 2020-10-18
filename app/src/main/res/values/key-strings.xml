@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="following_key">following_key</string>
-    <string name="activity_message_key">activity_message_key</string>
-    <string name="activity_reply_mention_key">activity_reply_mention_key</string>
-    <string name="activity_like_key">activity_like_key</string>
-    <string name="activity_reply_like_key">activity_reply_like_key</string>
-    <string name="thread_comment_reply_key">thread_comment_reply_key</string>
-    <string name="thread_comment_mention_key">thread_comment_mention_key</string>
-    <string name="thread_comment_like_key">thread_comment_like_key</string>
-    <string name="thread_subscribed_reply_key">thread_comment_like_key</string>
-    <string name="thread_like_key">thread_comment_like_key</string>
-    <string name="airing_notification_key">airing_notification_key</string>
-    <string name="related_media_addition_key">related_media_addition_key</string>
-    <string name="application_language_key">application_language_key</string>
+    <string name="following_key" translatable="false">following_key</string>
+    <string name="activity_message_key" translatable="false">activity_message_key</string>
+    <string name="activity_reply_mention_key" translatable="false">activity_reply_mention_key</string>
+    <string name="activity_like_key" translatable="false">activity_like_key</string>
+    <string name="activity_reply_like_key" translatable="false">activity_reply_like_key</string>
+    <string name="thread_comment_reply_key" translatable="false">thread_comment_reply_key</string>
+    <string name="thread_comment_mention_key" translatable="false">thread_comment_mention_key</string>
+    <string name="thread_comment_like_key" translatable="false">thread_comment_like_key</string>
+    <string name="thread_subscribed_reply_key" translatable="false">thread_comment_like_key</string>
+    <string name="thread_like_key" translatable="false">thread_comment_like_key</string>
+    <string name="airing_notification_key" translatable="false">airing_notification_key</string>
+    <string name="related_media_addition_key" translatable="false">related_media_addition_key</string>
+    <string name="application_language_key" translatable="false">application_language_key</string>
+    <string name="start_navigation_key" translatable="false">start_navigation_key</string>
 </resources>

@@ -50,7 +50,7 @@ open class DiscoverNewFragment : DiscoverPopularFragment() {
 
         orderedViewList.add(OrderedViewModel(
             discoverNewRecyclerView, order,
-            " >>> " + getString(R.string.newly_added) + " <<<", showSetting = true
+            getString(R.string.newly_added) + " >>>", showSetting = true
         ) {
             handleClick(it)
         })

@@ -12,8 +12,7 @@ import com.revolgenx.anilib.meta.StaffMeta
 import com.revolgenx.anilib.model.StaffModel
 import com.revolgenx.anilib.preference.loggedIn
 import com.revolgenx.anilib.repository.util.Status
-import com.revolgenx.anilib.util.makeSnakeBar
-import com.revolgenx.anilib.util.makeToast
+import com.revolgenx.anilib.ui.view.makeToast
 import com.revolgenx.anilib.util.openLink
 import com.revolgenx.anilib.util.prettyNumberFormat
 import com.revolgenx.anilib.viewmodel.staff.StaffViewModel
@@ -136,7 +135,7 @@ class StaffFragment : BaseFragment() {
             if (requireContext().loggedIn()) {
                 viewModel.toggleCharacterFav(toggleFavouriteField)
             } else {
-                staffNestedLayout.makeSnakeBar(R.string.please_log_in)
+                makeToast(R.string.please_log_in, null, R.drawable.ic_person)
             }
         }
     }

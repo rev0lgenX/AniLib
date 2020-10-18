@@ -6,6 +6,6 @@ import timber.log.Timber
 class LoggerTree: Timber.DebugTree(){
     init {
         FirebaseCrashlytics.getInstance()
-            .setCrashlyticsCollectionEnabled(true)
+            .setCrashlyticsCollectionEnabled(false)
     }
 }

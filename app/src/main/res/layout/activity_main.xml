@@ -5,47 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <com.pranavpandey.android.dynamic.support.widget.DynamicCoordinatorLayout
-            android:id="@+id/mainActivityCoordinatorLayout"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constrainedHeight="true"
-            app:layout_constraintBottom_toTopOf="@+id/bottomNav"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <include layout="@layout/toolbar_layout" />
-
-            <com.pranavpandey.android.dynamic.support.widget.DynamicFrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-                <com.pranavpandey.android.dynamic.support.widget.DynamicViewPager
-                    android:id="@+id/mainViewPager"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </com.pranavpandey.android.dynamic.support.widget.DynamicFrameLayout>
-
-        </com.pranavpandey.android.dynamic.support.widget.DynamicCoordinatorLayout>
-
-        <com.pranavpandey.android.dynamic.support.widget.DynamicBottomNavigationView
-            android:id="@+id/bottomNav"
-            android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"
-            app:itemTextAppearanceActive="@style/BottomNavigationTextAppearance"
-            app:itemTextAppearanceInactive="@style/BottomNavigationTextAppearance"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:menu="@menu/bottom_nav_menu" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <fragment
+        android:id="@+id/mainNavHost"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <com.pranavpandey.android.dynamic.support.widget.DynamicNavigationView
         android:id="@+id/navView"
@@ -56,7 +27,8 @@
         android:fitsSystemWindows="true"
         android:theme="@style/Widget.DynamicApp.NavigationView.ThemeOverlay"
         app:headerLayout="@layout/nav_header_layout"
-        app:menu="@menu/nav_menu" />
+        app:menu="@menu/nav_menu"
+        app:itemTextAppearance="@style/NavigationTextAppearance"/>
 
     <com.revolgenx.anilib.view.navigation.BrowseFilterNavigationView
         android:id="@+id/mainBrowseFilterNavView"

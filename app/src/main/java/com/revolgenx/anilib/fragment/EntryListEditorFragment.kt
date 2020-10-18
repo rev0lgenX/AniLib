@@ -28,9 +28,9 @@ import com.revolgenx.anilib.preference.userScoreFormat
 import com.revolgenx.anilib.repository.util.Status.*
 import com.revolgenx.anilib.type.MediaType
 import com.revolgenx.anilib.type.ScoreFormat
+import com.revolgenx.anilib.ui.view.makeToast
 import com.revolgenx.anilib.util.COLLAPSED
 import com.revolgenx.anilib.util.EXPANDED
-import com.revolgenx.anilib.util.makeToast
 import com.revolgenx.anilib.viewmodel.entry.MediaEntryEditorViewModel
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog
 import kotlinx.android.synthetic.main.error_layout.*
@@ -475,11 +475,11 @@ class EntryListEditorFragment : BaseFragment() {
         listEditorScoreLayout.onScoreChangeListener {
             apiModelEntry.score = it.toDouble()
         }
-        privateToggleButton.setToggleListener {
+        _privateToggleButton.setToggleListener {
             apiModelEntry.private = it
         }
 
-        privateToggleButton.setOnLongClickListener {
+        _privateToggleButton.setOnLongClickListener {
             makeToast(R.string.make_private)
             true
         }
@@ -506,7 +506,7 @@ class EntryListEditorFragment : BaseFragment() {
             statusSpinner.setSelection(it)
         }
         listEditorScoreLayout.mediaListScore = apiModelEntry.score ?: 0.0
-        privateToggleButton.checked = apiModelEntry.private == true
+        _privateToggleButton.checked = apiModelEntry.private == true
         listEditorEpisodeLayout.setCounter(apiModelEntry.progress?.toDouble())
         totalRewatchesLayout.setCounter(apiModelEntry.repeat?.toDouble())
         listEditorVolumeProgressLayout.setCounter(apiModelEntry.progressVolumes?.toDouble())

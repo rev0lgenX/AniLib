@@ -56,7 +56,7 @@ open class DiscoverReadingFragment : DiscoverWatchingFragment() {
 
             orderedViewList.add(OrderedViewModel(
                 dRecyclerView!!, order,
-                " >>> " + getString(R.string.reading) + " <<<"
+                getString(R.string.reading) + " >>>"
                 , showSetting = true
             ) {
                 handleClick(it)

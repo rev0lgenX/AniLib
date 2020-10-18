@@ -14,17 +14,24 @@
 
     <item
         android:id="@+id/navMediaList"
-        android:title="@string/list">
+        android:title="@string/main">
         <menu>
-            <item
-                android:id="@+id/navAnimeListId"
-                android:icon="@drawable/ic_media"
-                android:title="@string/anime_list" />
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/navHomeId"
+                    android:icon="@drawable/ic_home"
+                    android:title="@string/discover" />
 
-            <item
-                android:id="@+id/navMangaListId"
-                android:icon="@drawable/ic_manga"
-                android:title="@string/manga_list" />
+                <item
+                    android:id="@+id/navAnimeListId"
+                    android:icon="@drawable/ic_media"
+                    android:title="@string/anime_list" />
+
+                <item
+                    android:id="@+id/navMangaListId"
+                    android:icon="@drawable/ic_manga"
+                    android:title="@string/manga_list" />
+            </group>
         </menu>
     </item>
 
@@ -53,7 +60,7 @@
             <item
                 android:id="@+id/stageVersion"
                 android:icon="@drawable/ic_anilib_inline"
-                android:title="@string/plus_ultra_version" />
+                android:title="@string/studio_version" />
 
             <item
                 android:id="@+id/discordMenu"

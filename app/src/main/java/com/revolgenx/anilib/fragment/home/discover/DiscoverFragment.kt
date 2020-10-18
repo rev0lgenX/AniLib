@@ -1,14 +1,11 @@
 package com.revolgenx.anilib.fragment.home.discover
 
-import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import com.revolgenx.anilib.R
-import com.revolgenx.anilib.activity.ContainerActivity
 import com.revolgenx.anilib.activity.ToolbarContainerActivity
 import com.revolgenx.anilib.dialog.HomeOrderDialog
 import com.revolgenx.anilib.event.BrowseEvent
@@ -17,7 +14,6 @@ import com.revolgenx.anilib.fragment.notification.NotificationFragment
 import com.revolgenx.anilib.meta.UserMeta
 import com.revolgenx.anilib.preference.loggedIn
 import com.revolgenx.anilib.preference.userId
-import com.revolgenx.anilib.util.makeSnakeBar
 
 class DiscoverFragment : DiscoverReviewFragment() {
 
@@ -69,16 +65,4 @@ class DiscoverFragment : DiscoverReviewFragment() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
-    }
-
-    private fun View.checkLoggedIn(): Boolean {
-        val loggedIn = context.loggedIn()
-        if (!loggedIn) makeSnakeBar(R.string.please_log_in)
-        return loggedIn
-    }
-
 }

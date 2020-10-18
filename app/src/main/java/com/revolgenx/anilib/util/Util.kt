@@ -25,6 +25,7 @@ import com.pranavpandey.android.dynamic.utils.DynamicUnitUtils
 import com.revolgenx.anilib.R
 import com.revolgenx.anilib.fragment.base.BaseFragment
 import com.revolgenx.anilib.type.MediaSeason
+import com.revolgenx.anilib.ui.view.makeToast
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope
@@ -38,15 +39,6 @@ import java.util.*
 const val COLLAPSED = 0
 const val EXPANDED = 1
 
-
-fun AppCompatActivity.makePagerAdapter(fragments: List<BaseFragment>) =
-    object : FragmentPagerAdapter(
-        this@makePagerAdapter.supportFragmentManager,
-        BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
-    ) {
-        override fun getItem(position: Int) = fragments[position]
-        override fun getCount(): Int = fragments.size
-    }
 
 fun getSeasonFromMonth(monthOfYear: Int): MediaSeason {
     monthOfYear.let {
@@ -111,9 +103,6 @@ fun dp(dp: Float) = DynamicUnitUtils.convertDpToPixels(dp)
 
 fun sp(sp: Float) = DynamicUnitUtils.convertSpToPixels(sp)
 
-fun makeLogInSnackBar(view: View) {
-    view.makeSnakeBar(R.string.please_log_in)
-}
 
 fun TextView.naText(text: String?) {
     this.text = text?.takeIf { it.isNotEmpty() } ?: "?"
@@ -127,29 +116,6 @@ fun Double?.getOrDefault() = this ?: 0.0
 
 //fun naText(na: String?) = na.takeIf { it != null && it.isNotEmpty() } ?: "?"
 
-fun View.makeSnakeBar(@StringRes str: Int? = null, msg: String? = null) {
-    Snackbar.make(this, str?.let { context.getString(str) } ?: msg ?: "", Snackbar.LENGTH_SHORT)
-        .show()
-}
-
-fun Fragment.makeToast(@StringRes str: Int? = null, msg: String? = null, @DrawableRes icon: Int? = null) {
-    context?.makeToast(str, msg, icon)
-}
-
-fun Context.makeToast(@StringRes str: Int? = null, msg: String? = null, @DrawableRes icon: Int? = null) {
-    if (icon != null) {
-        val drawable = ContextCompat.getDrawable(this, icon)
-        DynamicToast.make(this, str?.let { getString(it) } ?: msg, drawable).also {
-            it.view.findViewById<TextView?>(com.pranavpandey.android.dynamic.toasts.R.id.adt_toast_text)
-                ?.textSize = 13f
-        }.show()
-    } else {
-        DynamicToast.make(this, str?.let { getString(it) } ?: msg).also {
-            it.view.findViewById<TextView?>(com.pranavpandey.android.dynamic.toasts.R.id.adt_toast_text)
-                ?.textSize = 13f
-        }.show()
-    }
-}
 
 fun DynamicSpinner.onItemSelected(callback: (position: Int) -> Unit) {
     onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
