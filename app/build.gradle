@@ -18,7 +18,7 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.revolgenx.anilib"
+        applicationId "com.revolgenx.anilib_studio"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 22
@@ -264,7 +264,9 @@ dependencies {
     implementation "androidx.work:work-runtime-ktx:$work_version"
 
     //firebase
-    implementation "com.google.firebase:firebase-crashlytics:$crashlytics_version"
+    implementation platform('com.google.firebase:firebase-bom:25.12.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation "com.google.firebase:firebase-crashlytics-ktx"
 
     //draglistview
     implementation "com.github.woxthebox:draglistview:$draglist_version"

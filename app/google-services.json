@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "599470520070",
-    "firebase_url": "https://anilib-v2.firebaseio.com",
-    "project_id": "anilib-v2",
-    "storage_bucket": "anilib-v2.appspot.com"
+    "project_number": "145444352698",
+    "firebase_url": "https://anilib-studio.firebaseio.com",
+    "project_id": "anilib-studio",
+    "storage_bucket": "anilib-studio.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:599470520070:android:55eb1a64cb32bc01d41087",
+        "mobilesdk_app_id": "1:145444352698:android:6e58ba82443346635d8883",
         "android_client_info": {
-          "package_name": "com.revolgenx.anilib"
+          "package_name": "com.revolgenx.anilib_studio"
         }
       },
       "oauth_client": [
         {
-          "client_id": "599470520070-60csjmv2v665p2chmdun0reaucvdjate.apps.googleusercontent.com",
+          "client_id": "145444352698-ni36qject9rvpemgcbj9f1ciej6r2brk.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAyFZ0KSWl5Gq2kbkwjO0s0Q1MUPK0Yr_w"
+          "current_key": "AIzaSyDqisZ4dXehsP1IXfZNHMmei2uZycnetCg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "599470520070-60csjmv2v665p2chmdun0reaucvdjate.apps.googleusercontent.com",
+              "client_id": "145444352698-ni36qject9rvpemgcbj9f1ciej6r2brk.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
