@@ -3,7 +3,7 @@
     <string name="release_info" translatable="false">
         ## Whats new!!!. \n
 
-        ### -v1.1.6-base \n
+        ### -v1.1.6-studio \n
         * Code is OpenSource [Github](https://github.com/rev0lgenX/AniLib). Visit to contribute or file an issue. \n
         * Join Discord to directly communicate about features, bugs and issues. [Discord](https://discord.com/invite/Gd2TVQT) \n
         * Choose startup page from setting. \n
@@ -11,7 +11,7 @@
         * UI changes. \n
 
 
-        ### -v1.1.5-base \n
+        ### -v1.1.5-studio \n
 
         * tags, genre include/exclude ui changes \n
         * display mode in anime/manga list \n
@@ -19,7 +19,7 @@
         * bug fixes \n
 
 
-        ### -v1.1.4-base \n
+        ### -v1.1.4-studio \n
 
         * anime/manga list sorting \n
         * adding/removing genre, tags and others moved to setting \n
@@ -31,7 +31,7 @@
         * ui changes \n
         * optimization and bug fixes \n
 
-        ### -v1.1.3-base \n
+        ### -v1.1.3-studio \n
 
         * Added user search in search type.\n
         * Bug fixes when adding to list.\n
@@ -39,17 +39,17 @@
         * User Studio Stats showing Genre stats instead of Studio issue fixed.\n
         * Bug fixes.\n
 
-        ### -v1.1.2-base \n
+        ### -v1.1.2-studio \n
         * Added custom tag feature to manually add tags, genre and streams.\n
         * optimization. \n
 
-        ### -v1.1.1-base \n
+        ### -v1.1.1-studio \n
         * Added Advance Scoring.\n
         * Completed Date not persisting fixed.\n
         * crash fixes.\n
         * optimization.\n
 
-        ### -v1.1.0-base \n
+        ### -v1.1.0-studio \n
         * New Design. Customizable theme.\n
         * Browse media with complete detail.\n
         * Browse Suggestion.\n
